@@ -1,0 +1,1 @@
+2020-05-16 17:09:04.967  INFO 16924 --- [           main] o.a.n.r.p.StandardProviderFactory        : Instantiated EventHookProvider with class name org.apache.nifi.registry.provider.hook.ScriptEventHookProvider

@@ -1,0 +1,4 @@
+2020-05-16 17:09:03.714  INFO 16924 --- [           main] o.a.n.r.p.StandardProviderFactory        : Instantiated FlowPersistenceProvider with class name org.apache.nifi.registry.provider.MockFlowPersistenceProvider
+2020-05-16 17:09:03.715  INFO 16924 --- [           main] o.a.n.r.p.StandardProviderFactory        : Configured FlowPersistenceProvider with class name org.apache.nifi.registry.provider.MockFlowPersistenceProvider
+2020-05-16 17:09:03.738  INFO 16924 --- [           main] o.a.n.r.p.StandardProviderFactory        : Instantiated ExtensionBundlePersistenceProvider with class name org.apache.nifi.registry.provider.MockExtensionBundlePersistenceProvider
+2020-05-16 17:09:03.738  INFO 16924 --- [           main] o.a.n.r.p.StandardProviderFactory        : Configured FlowPersistenceProvider with class name org.apache.nifi.registry.provider.MockExtensionBundlePersistenceProvider

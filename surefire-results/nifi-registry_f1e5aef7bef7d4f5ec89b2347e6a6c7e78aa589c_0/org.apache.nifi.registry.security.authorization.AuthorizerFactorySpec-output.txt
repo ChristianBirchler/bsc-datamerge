@@ -1,0 +1,14 @@
+17:08:40.557 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Creating new users file at /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-framework/./target/test-classes/security/users.xml
+17:08:40.593 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Users/Groups file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.621 [main] INFO  o.a.n.r.s.a.f.FileAccessPolicyProvider - Creating new authorizations file at /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-framework/./target/test-classes/security/authorizations.xml
+17:08:40.629 [main] INFO  o.a.n.r.s.a.f.FileAccessPolicyProvider - Authorizations file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.675 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Users/Groups file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.686 [main] INFO  o.a.n.r.s.a.f.FileAccessPolicyProvider - Authorizations file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.723 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Users/Groups file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.747 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Users/Groups file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.758 [main] INFO  o.a.n.r.s.a.f.FileAccessPolicyProvider - Authorizations file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.783 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Users/Groups file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.783 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Creating new users file at /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-framework/./target/test-classes/security/read-only-users.xml
+17:08:40.789 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Users/Groups file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.817 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Users/Groups file loaded at Sat May 16 17:08:40 CEST 2020
+17:08:40.822 [main] INFO  o.a.n.r.s.a.f.FileUserGroupProvider - Users/Groups file loaded at Sat May 16 17:08:40 CEST 2020

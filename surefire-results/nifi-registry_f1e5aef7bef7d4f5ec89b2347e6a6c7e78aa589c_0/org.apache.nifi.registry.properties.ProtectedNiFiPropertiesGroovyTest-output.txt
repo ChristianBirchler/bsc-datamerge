@@ -1,0 +1,646 @@
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_aes_128.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - The property is sensitive and protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keystorePasswd: thisIsABadPassword
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 20 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_unprotected.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - The property is sensitive and not protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keystorePasswd: thisIsABadKeystorePassword
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 21 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_unprotected_extra_line.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keyPasswd is SENSITIVE
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keyPasswd is NOT PROTECTED
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 23 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 23 properties from conf/nifi.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Hash code of internal instance: -1488500705
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Unprotected 23 properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Hash code from returned unprotected instance: -1488500705
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_aes_128.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Sensitive property keys: [nifi.registry.web.http.port, nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd, nifi.registry.security.truststorePasswd]
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Protected property keys: [nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd]
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 67.0% (2 of 3) protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_aes_single_malformed.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - The property is sensitive and protected
+[main] ERROR org.apache.nifi.registry.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+org.bouncycastle.util.encoders.DecoderException: unable to decode base64 string: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64.decode(Unknown Source)
+	at org.apache.nifi.registry.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:521)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.getUnprotectedProperties(ProtectedNiFiRegistryProperties.java:336)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:233)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleSingleMalformedValue_closure2.doCall(ProtectedNiFiPropertiesGroovyTest.groovy:318)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleSingleMalformedValue_closure2.doCall(ProtectedNiFiPropertiesGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:408)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:119)
+	at groovy.util.GroovyTestCase.shouldFail(GroovyTestCase.java:222)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:174)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest.testGetValueOfSensitivePropertyShouldHandleSingleMalformedValue(ProtectedNiFiPropertiesGroovyTest.groovy:317)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.io.IOException: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64Encoder.decodeLastBlock(Unknown Source)
+	at org.bouncycastle.util.encoders.Base64Encoder.decode(Unknown Source)
+	... 65 more
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - Failed to unprotect 'nifi.registry.security.keystorePasswd'
+SensitivePropertyProtectionException: Error unprotecting value for nifi.registry.security.keystorePasswd
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:523)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.getUnprotectedProperties(ProtectedNiFiRegistryProperties.java:336)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:233)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleSingleMalformedValue_closure2.doCall(ProtectedNiFiPropertiesGroovyTest.groovy:318)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleSingleMalformedValue_closure2.doCall(ProtectedNiFiPropertiesGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:408)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:119)
+	at groovy.util.GroovyTestCase.shouldFail(GroovyTestCase.java:222)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:210)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:59)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:174)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest.testGetValueOfSensitivePropertyShouldHandleSingleMalformedValue(ProtectedNiFiPropertiesGroovyTest.groovy:317)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.bouncycastle.util.encoders.DecoderException: unable to decode base64 string: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64.decode(Unknown Source)
+	at org.apache.nifi.registry.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:521)
+	... 62 more
+Caused by: java.io.IOException: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64Encoder.decodeLastBlock(Unknown Source)
+	at org.bouncycastle.util.encoders.Base64Encoder.decode(Unknown Source)
+	... 65 more
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Failed to unprotect key nifi.registry.security.keystorePasswd
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Cannot overwrite existing sensitive property provider registered for mockProvider
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_aes_128.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Detected 2 protected properties and 2 protection scheme properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Protected properties: 
+nifi.registry.security.keyPasswd=6WUpex+VZiN05LXu||joWJMuoSzYniEC7IAoingTimlG7+RGk8I2irl/WTlIuMcg
+nifi.registry.security.keystorePasswd=6WUpex+VZiN05LXu||joWJMuoSzYniEC7IAoingTimlG7+RGk8I2irl/WTlIuMcg
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Expected unprotected property count: 20
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Hash code of internal instance: 2081196846
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Unprotected 20 properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Hash code from returned unprotected instance: 1176636501
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Raw properties (3): key, key2, key.protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Protected properties (2): key2, key
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Raw value for nifi.registry.security.keystorePasswd: oBjT92hIGRElIGOh||MZ6uYuWNBrOA6usq/Jt3DaD2e4otNirZDytac/w/KFe0HOkrJR03vcbo
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_unknown.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - The property is sensitive and protected
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - No provider available for unknown so passing the protected nifi.registry.security.keyPasswd value back
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - No provider available for unknown so passing the protected nifi.registry.security.keystorePasswd value back
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keystorePasswd: oBjT92hIGRElIGOh||MZ6uYuWNBrOA6usq/Jt3DaD2e4otNirZDytac/w/KFe0HOkrJR03vcbo
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_fully_protected_aes_128.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Sensitive property keys: [nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd, nifi.registry.security.truststorePasswd]
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Protected property keys: [nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd]
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 100.0% (2 of 2) protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_aes_128.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Read raw value from properties: 6WUpex+VZiN05LXu||joWJMuoSzYniEC7IAoingTimlG7+RGk8I2irl/WTlIuMcg
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - The property is sensitive and protected
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - No provider available for aes/gcm/128 so passing the protected nifi.registry.security.keyPasswd value back
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - No provider available for aes/gcm/128 so passing the protected nifi.registry.security.keystorePasswd value back
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keystorePasswd: 6WUpex+VZiN05LXu||joWJMuoSzYniEC7IAoingTimlG7+RGk8I2irl/WTlIuMcg
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_aes_multiple_malformed.properties
+[main] ERROR org.apache.nifi.registry.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+org.bouncycastle.util.encoders.DecoderException: unable to decode base64 string: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64.decode(Unknown Source)
+	at org.apache.nifi.registry.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.registry.properties.SensitivePropertyProvider$unprotect.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure4.doCall(ProtectedNiFiPropertiesGroovyTest.groovy:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:42)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.BooleanReturningMethodInvoker.invoke(BooleanReturningMethodInvoker.java:51)
+	at org.codehaus.groovy.runtime.callsite.BooleanClosureWrapper.call(BooleanClosureWrapper.java:53)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.findAll(DefaultGroovyMethods.java:4331)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.findAll(DefaultGroovyMethods.java:4203)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.findAll(DefaultGroovyMethods.java:4175)
+	at org.codehaus.groovy.runtime.dgm$206.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:274)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest.testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues(ProtectedNiFiPropertiesGroovyTest.groovy:344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.io.IOException: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64Encoder.decodeLastBlock(Unknown Source)
+	at org.bouncycastle.util.encoders.Base64Encoder.decode(Unknown Source)
+	... 58 more
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - [EXPECTED] Caught a malformed value for nifi.registry.security.keyPasswd
+[main] ERROR org.apache.nifi.registry.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+org.bouncycastle.util.encoders.DecoderException: unable to decode base64 string: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64.decode(Unknown Source)
+	at org.apache.nifi.registry.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.registry.properties.SensitivePropertyProvider$unprotect.call(Unknown Source)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure4.doCall(ProtectedNiFiPropertiesGroovyTest.groovy:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:42)
+	at org.codehaus.groovy.runtime.callsite.BooleanReturningMethodInvoker.invoke(BooleanReturningMethodInvoker.java:51)
+	at org.codehaus.groovy.runtime.callsite.BooleanClosureWrapper.call(BooleanClosureWrapper.java:53)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.findAll(DefaultGroovyMethods.java:4331)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.findAll(DefaultGroovyMethods.java:4203)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.findAll(DefaultGroovyMethods.java:4175)
+	at org.codehaus.groovy.runtime.dgm$206.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:274)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest.testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues(ProtectedNiFiPropertiesGroovyTest.groovy:344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.io.IOException: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64Encoder.decodeLastBlock(Unknown Source)
+	at org.bouncycastle.util.encoders.Base64Encoder.decode(Unknown Source)
+	... 53 more
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - [EXPECTED] Caught a malformed value for nifi.registry.security.keystorePasswd
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - [EXPECTED] Malformed keys: nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd
+[main] ERROR org.apache.nifi.registry.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+org.bouncycastle.util.encoders.DecoderException: unable to decode base64 string: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64.decode(Unknown Source)
+	at org.apache.nifi.registry.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:521)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.getUnprotectedProperties(ProtectedNiFiRegistryProperties.java:336)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:233)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure5.doCall(ProtectedNiFiPropertiesGroovyTest.groovy:361)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure5.doCall(ProtectedNiFiPropertiesGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:408)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:119)
+	at groovy.test.GroovyAssert$shouldFail.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest.testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues(ProtectedNiFiPropertiesGroovyTest.groovy:360)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.io.IOException: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64Encoder.decodeLastBlock(Unknown Source)
+	at org.bouncycastle.util.encoders.Base64Encoder.decode(Unknown Source)
+	... 59 more
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - Failed to unprotect 'nifi.registry.security.keyPasswd'
+SensitivePropertyProtectionException: Error unprotecting value for nifi.registry.security.keyPasswd
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:523)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.getUnprotectedProperties(ProtectedNiFiRegistryProperties.java:336)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:233)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure5.doCall(ProtectedNiFiPropertiesGroovyTest.groovy:361)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure5.doCall(ProtectedNiFiPropertiesGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:408)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:119)
+	at groovy.test.GroovyAssert$shouldFail.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest.testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues(ProtectedNiFiPropertiesGroovyTest.groovy:360)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.bouncycastle.util.encoders.DecoderException: unable to decode base64 string: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64.decode(Unknown Source)
+	at org.apache.nifi.registry.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:521)
+	... 56 more
+Caused by: java.io.IOException: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64Encoder.decodeLastBlock(Unknown Source)
+	at org.bouncycastle.util.encoders.Base64Encoder.decode(Unknown Source)
+	... 59 more
+[main] ERROR org.apache.nifi.registry.properties.AESSensitivePropertyProvider - Error decrypting a protected value
+org.bouncycastle.util.encoders.DecoderException: unable to decode base64 string: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64.decode(Unknown Source)
+	at org.apache.nifi.registry.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:521)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.getUnprotectedProperties(ProtectedNiFiRegistryProperties.java:336)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:233)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure5.doCall(ProtectedNiFiPropertiesGroovyTest.groovy:361)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure5.doCall(ProtectedNiFiPropertiesGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:408)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:119)
+	at groovy.test.GroovyAssert$shouldFail.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest.testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues(ProtectedNiFiPropertiesGroovyTest.groovy:360)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.io.IOException: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64Encoder.decodeLastBlock(Unknown Source)
+	at org.bouncycastle.util.encoders.Base64Encoder.decode(Unknown Source)
+	... 59 more
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - Failed to unprotect 'nifi.registry.security.keystorePasswd'
+SensitivePropertyProtectionException: Error unprotecting value for nifi.registry.security.keystorePasswd
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:523)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.getUnprotectedProperties(ProtectedNiFiRegistryProperties.java:336)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:233)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure5.doCall(ProtectedNiFiPropertiesGroovyTest.groovy:361)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest$_testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues_closure5.doCall(ProtectedNiFiPropertiesGroovyTest.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:408)
+	at groovy.test.GroovyAssert.shouldFail(GroovyAssert.java:119)
+	at groovy.test.GroovyAssert$shouldFail.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest.testGetValueOfSensitivePropertyShouldHandleMultipleMalformedValues(ProtectedNiFiPropertiesGroovyTest.groovy:360)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.bouncycastle.util.encoders.DecoderException: unable to decode base64 string: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64.decode(Unknown Source)
+	at org.apache.nifi.registry.properties.AESSensitivePropertyProvider.unprotect(AESSensitivePropertyProvider.java:241)
+	at org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties.unprotectValue(ProtectedNiFiRegistryProperties.java:521)
+	... 56 more
+Caused by: java.io.IOException: invalid characters encountered at end of base64 data
+	at org.bouncycastle.util.encoders.Base64Encoder.decodeLastBlock(Unknown Source)
+	at org.bouncycastle.util.encoders.Base64Encoder.decode(Unknown Source)
+	... 59 more
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - Combining 2 failed keys [nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd] into single exception
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - [EXPECTED] Failed to unprotect keys
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 3 default sensitive properties: nifi.registry.security.keystorePasswd, nifi.registry.security.keyPasswd, nifi.registry.security.truststorePasswd
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 23 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 3 default sensitive properties: nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd, nifi.registry.security.truststorePasswd
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_aes_128.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.truststorePasswd is SENSITIVE
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.truststorePasswd is NOT PROTECTED
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keystorePasswd is SENSITIVE
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keystorePasswd is PROTECTED
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Raw properties (3): key, key2, key.protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Protected properties (2): key2, key
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 20 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_unprotected.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - The property is sensitive and not protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.truststorePasswd: 
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Cannot add null SensitivePropertyProvider
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 23 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Sensitive property keys: [nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd, nifi.registry.security.truststorePasswd]
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Protected property keys: []
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 0.0% (0 of 0) protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 22 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_sensitive_props_protected_aes_256.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Detected 2 protected properties and 2 protection scheme properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Protected properties: 
+nifi.registry.security.keyPasswd=ac/BaE35SL/esLiJ||+ULRvRLYdIDA2VqpE0eQXDEMjaLBMG2kbKOdOwBk/hGebDKlVg==
+nifi.registry.security.keystorePasswd=oBjT92hIGRElIGOh||MZ6uYuWNBrOA6usq/Jt3DaD2e4otNirZDytac/w/KFe0HOkrJR03vcbo
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Expected unprotected property count: 20
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Hash code of internal instance: -1857213892
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Unprotected 20 properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Hash code from returned unprotected instance: 596480310
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Raw properties (3): key, key2, key.protected
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Protected properties with schemes (3): key.protected, key2, key
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 23 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Has protected properties: false
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Internal cache [:] has 0 providers loaded
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 23 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.properties
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.web.http.port is NOT SENSITIVE
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - nifi.registry.security.keystorePasswd is SENSITIVE
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 5 total sensitive properties: nifi.registry.security.keystorePasswd, nifi.registry.security.keyPasswd, nifi.registry.security.truststorePasswd, nifi.registry.web.http.port, nifi.registry.web.http.host
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 27 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_additional_sensitive_keys.properties
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 5 retrieved sensitive properties: nifi.registry.web.http.port, nifi.registry.web.http.host, nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd, nifi.registry.security.truststorePasswd
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 5 total sensitive properties: nifi.registry.security.keystorePasswd, nifi.registry.security.keyPasswd, nifi.registry.security.truststorePasswd, nifi.registry.web.http.port, nifi.registry.web.http.host
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - Loaded 27 properties from /home/christian/Desktop/bsc-toolchain/projects-clones/nifi-registry/nifi-registry-core/nifi-registry-properties/target/test-classes/conf/nifi-registry.with_additional_sensitive_keys.properties
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] WARN org.apache.nifi.registry.properties.ProtectedNiFiRegistryProperties - The key 'nifi.registry.sensitive.props.additional.keys' contains itself. This is poor practice and should be removed
+[main] INFO org.apache.nifi.registry.properties.ProtectedNiFiPropertiesGroovyTest - 5 retrieved sensitive properties: nifi.registry.web.http.port, nifi.registry.web.http.host, nifi.registry.security.keyPasswd, nifi.registry.security.keystorePasswd, nifi.registry.security.truststorePasswd
