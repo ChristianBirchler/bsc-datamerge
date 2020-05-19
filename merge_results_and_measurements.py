@@ -89,19 +89,27 @@ def get_test_result(identifer, project_name, commit_hash, iteration):
     folder_of_interest = project_name + "_" + commit_hash + "_" + str(iteration)
 
     test_result = 'NOT FOUND'
-    for root, dirs, files in os.walk(SUREFIRE_REPORTS_PATH):
-        for dir in dirs:
-            if dir == folder_of_interest:
-                #print("FOUND:" + folder_of_interest)
+
+    try:
+        xml_file_path = get_xml_file_path(SUREFIRE_REPORTS_PATH+'/'+folder_of_interest, identifer)
+        test_result = get_result_from_surefire_xml(xml_file_path, identifer)
+    except:
+        print("report not found of: "+str(identifer)+"\thash="+str(commit_hash)+"\titer="+str(iteration))
+
+
+    # for root, dirs, files in os.walk(SUREFIRE_REPORTS_PATH):
+    #     for dir in dirs:
+    #         if dir == folder_of_interest:
+    #             #print("FOUND:" + folder_of_interest)
                 
-                abs_dir_path = root + "/" + folder_of_interest
-                try:
-                    xml_file_path = get_xml_file_path(abs_dir_path, identifer)
-                    #print(identifer)
-                    #print(xml_file_path)
-                    test_result = get_result_from_surefire_xml(xml_file_path, identifer)
-                except:
-                    print("report not found of: "+str(identifer)+"\thash="+str(commit_hash)+"\titer="+str(iteration))
+    #             abs_dir_path = root + "/" + folder_of_interest
+    #             try:
+    #                 xml_file_path = get_xml_file_path(abs_dir_path, identifer)
+    #                 #print(identifer)
+    #                 #print(xml_file_path)
+    #                 test_result = get_result_from_surefire_xml(xml_file_path, identifer)
+    #             except:
+    #                 print("report not found of: "+str(identifer)+"\thash="+str(commit_hash)+"\titer="+str(iteration))
 
     return test_result
 
