@@ -129,9 +129,10 @@ if __name__ == "__main__":
     """
 
     ######### PARAMETERS ##########
-    MEASUREMENT_PATH = "/home/christian/Desktop/DataMerge/measurements.csv"
-    SUREFIRE_REPORTS_PATH = "/home/christian/Desktop/ScienceCloudResults/16052020_VM6_SOURCETRANS_V2_NO-GC/surefire-results"
-    OUTPUT_FILE_PATH = "/home/christian/Desktop/data-merge-output.csv"
+    ROOT = os.getcwd()
+    MEASUREMENT_PATH = ROOT+"/measurements.csv"
+    SUREFIRE_REPORTS_PATH = ROOT+"/16052020_VM6_SOURCETRANS_V2_NO-GC/surefire-results"
+    OUTPUT_FILE_PATH = ROOT+"/data-merge-output.csv"
     RED='\033[0;31m'
     NC='\033[0m'
     ######### PARAMETERS ##########
