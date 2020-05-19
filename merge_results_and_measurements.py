@@ -95,15 +95,24 @@ def get_test_result(identifer, project_name, commit_hash, iteration):
                 #print("FOUND:" + folder_of_interest)
                 
                 abs_dir_path = root + "/" + folder_of_interest
-                xml_file_path = get_xml_file_path(abs_dir_path, identifer)
-                #print(identifer)
-                #print(xml_file_path)
-                test_result = get_result_from_surefire_xml(xml_file_path, identifer)
+                try:
+                    xml_file_path = get_xml_file_path(abs_dir_path, identifer)
+                    #print(identifer)
+                    #print(xml_file_path)
+                    test_result = get_result_from_surefire_xml(xml_file_path, identifer)
+                except:
+                    print("report not found of: "+str(identifer)+"\thash="+str(commit_hash)+"\titer="+str(iteration))
 
     return test_result
 
 
 if __name__ == "__main__":
+
+    # print(get_result_from_surefire_xml("/home/christian/Desktop/my-app/target/surefire-reports/TEST-ch.chribir.AppTest.xml", "ch.chribir.AppTest.testZero"))
+    # print(get_result_from_surefire_xml("/home/christian/Desktop/my-app/target/surefire-reports/TEST-ch.chribir.AppTest.xml", "ch.chribir.AppTest.testOne"))
+    # print(get_result_from_surefire_xml("/home/christian/Desktop/my-app/target/surefire-reports/TEST-ch.chribir.AppTest.xml", "ch.chribir.AppTest.testTwo"))
+    # print(get_result_from_surefire_xml("/home/christian/Desktop/my-app/target/surefire-reports/TEST-ch.chribir.AppTest.xml", "ch.chribir.AppTest.testThree"))
+
     """
     - create new column/variable named pass/fail
     - iterate over entries (PrimaryKey(TestCase, iteration))
@@ -112,8 +121,9 @@ if __name__ == "__main__":
     """
 
     ######### PARAMETERS ##########
-    MEASUREMENT_PATH = "/home/christian/Desktop/DataMerge/myMeasurements.csv"
-    SUREFIRE_REPORTS_PATH = "/home/christian/Desktop/DataMerge/surefire-results"
+    MEASUREMENT_PATH = "/home/christian/Desktop/DataMerge/measurements.csv"
+    SUREFIRE_REPORTS_PATH = "/home/christian/Desktop/ScienceCloudResults/16052020_VM6_SOURCETRANS_V2_NO-GC/surefire-results"
+    OUTPUT_FILE_PATH = "/home/christian/Desktop/data-merge-output.csv"
     RED='\033[0;31m'
     NC='\033[0m'
     ######### PARAMETERS ##########
@@ -143,7 +153,12 @@ if __name__ == "__main__":
 
         # add test result to data frame
         dd.iloc[i,1] = test_result
+        print("line="+str(i)+"\ttest="+str(test_identifier)+"\tresult="+str(test_result))
+        #print(dd.iloc[i,1])
 
-    print( dd.loc[ dd['pass/fail']=="NOT FOUND" ] )
+    #print( dd.loc[ dd['pass/fail']=="NOT FOUND" ] )
+    print("write csv ...")
+    dd.to_csv(OUTPUT_FILE_PATH)
+
 
     print(RED+"merge completed ..."+NC)
