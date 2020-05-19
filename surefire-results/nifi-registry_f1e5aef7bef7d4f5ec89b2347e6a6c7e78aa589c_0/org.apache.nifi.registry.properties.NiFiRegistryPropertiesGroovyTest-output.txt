@@ -1,5 +1,0 @@
-[main] INFO org.apache.nifi.registry.properties.NiFiRegistryPropertiesGroovyTest - NiFiRegistryProperties has 0 properties: []
-[main] INFO org.apache.nifi.registry.properties.NiFiRegistryPropertiesGroovyTest - rawProperties has 1 properties: [key]
-[main] INFO org.apache.nifi.registry.properties.NiFiRegistryPropertiesGroovyTest - NiFiRegistryProperties has 1 properties: [key]
-[main] INFO org.apache.nifi.registry.properties.NiFiRegistryPropertiesGroovyTest - niFiProperties has 1 properties: [key]
-[main] INFO org.apache.nifi.registry.properties.NiFiRegistryPropertiesGroovyTest - emptyProperties has 0 properties: []

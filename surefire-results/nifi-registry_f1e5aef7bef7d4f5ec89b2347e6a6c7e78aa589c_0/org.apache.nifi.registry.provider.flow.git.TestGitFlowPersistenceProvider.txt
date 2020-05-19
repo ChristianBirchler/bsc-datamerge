@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.apache.nifi.registry.provider.flow.git.TestGitFlowPersistenceProvider
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.991 sec - in org.apache.nifi.registry.provider.flow.git.TestGitFlowPersistenceProvider
